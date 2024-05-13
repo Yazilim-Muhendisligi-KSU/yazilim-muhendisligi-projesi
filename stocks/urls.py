@@ -3,6 +3,6 @@ from .import views
 
 
 urlpatterns = [
-    path("Stocks",views.stocks),
+    path("stocks",views.stocks),
 
 ]

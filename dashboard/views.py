@@ -1,14 +1,42 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
-def index(request):
-    return HttpResponse("dashboard")
+from django.http import JsonResponse, HttpResponse
 
-def about(request):
-    return HttpResponse("About")
+from . import utils
 
-def contact(request):
-    return HttpResponse("Contact")
+from accounts.models import User
 
 
+def index(request):  # anasayfa
+
+    context = {}
+    
+    return render(request, "index.html", context)
+
+
+def all_stocks(request):
+    context = {}
+
+    return render(request, "index.html", context)
+    
+
+
+
+    """"
+    web serveri icin gerekli endpointler:
+    genel:
+    landing
+    dashboard  (takip listesi)
+    hakkinda
+    iletisim
+    
+    kullanici ile alakali:
+    giriş
+    kayit olma
+    sahip olduğu hisseleri ve para miktarini göreceği sayfa(portfoy sayfasi)
+
+    tema(borsa) ile ilgili şeyler: 
+    tüm hisselerin görüleceği yer 
+    tek bir hissenin detaylarinin görüleceği bir yer
+    alim satim ve teknik analizin yapilacaği sayfa yada pop-up
+    """
