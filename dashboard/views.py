@@ -14,11 +14,13 @@ def index(request):  # anasayfa
     return render(request, "index.html", context)
 
 
-def all_stocks(request):
+def all_stocks(request):  #stock degerleri
     context = {}
 
-    return render(request, "index.html", context)
+    return render(request, "stocks.html", context)
     
+
+
 
 
 
