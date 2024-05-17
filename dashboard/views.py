@@ -20,9 +20,16 @@ def all_stocks(request):  #stock degerleri
     return render(request, "stocks.html", context)
     
 
+def about(request): #hakkımızda 
+    context= {
+        'page_title': 'About Us',
+        'content': 'This is the about page.'
+    }
+    return render (request,"about.html",context)
 
-
-
+def contact(request): #iletişim
+    context ={}
+    return render(request,"contact.html",context)
 
     """"
     web serveri icin gerekli endpointler:

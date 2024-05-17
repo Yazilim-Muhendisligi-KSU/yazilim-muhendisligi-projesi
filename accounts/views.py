@@ -7,7 +7,7 @@ from .models import User, Analysis, WatchedStock,Notification
 import json
 
 
-def register(request):
+def register_view(request):
     if request.method == 'POST':
         username = request.POST.get('username', None)
         email = request.POST.get('email', None)
