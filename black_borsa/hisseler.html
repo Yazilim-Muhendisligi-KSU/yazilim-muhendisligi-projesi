@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Borsa</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" type="image/x-icon" href="pic/logo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="navbar">
+        <a href="#"><img src="pic/logo2.png" alt="Borsa Takibi Logo" class="logo"></a>
+        <div class="nav-links">
+            <a href="./Anasayfa.html">Ana Sayfa</a>
+           
+            <a href="./hisseler.html">Hisseler</a>
+            <a href="./analizlerim.html">Analizler</a>
+           
+           
+        </div>
+        <div class="nav-buttons">
+            <a href="./Login.html" class="btn">Login</a>
+            <a href="./Signin.html" class="btn">Sign In</a>
+        </div>
+    </div>
+
+    <section id="anasayfa">
+        <h2>Genel Hisseler</h2>
+    <table id="hisseler-tablosu">
+        <thead>
+            <tr>
+                <th>Hisse Kodu</th>
+                <th>Hisse Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Buraya JavaScript ile hisselerin dinamik olarak ekleneceği bir tablo oluşturacağız -->
+        </tbody>
+    </table>
+
+    <div id="hisse-detaylari"></div>
+
+    
+    <!-- JavaScript dosyası -->
+    <script src="hisseler.js"></script>
+</body>
+</html>

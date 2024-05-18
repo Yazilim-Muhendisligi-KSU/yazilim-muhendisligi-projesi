@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+#anasayfa {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#anasayfa h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    padding: 16px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.nav-links a {
+    color: white;
+    padding: 20px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #333;
+}
+
+.nav-buttons .btn {
+    background: #85BB65;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-buttons .btn:hover {
+    background: #85BB65;
+}
+
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+#izleme-listesi, #grafik-cizimler {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+#hisse-listesi {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#hisse-listesi th, #hisse-listesi td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#hisse-listesi th {
+    background-color: #f4f4f4;
+}
+
+#hisse-listesi td a {
+    text-decoration: none;
+    color: #333;
+}
+
+#hisse-listesi td a:hover {
+    font-weight: bold;
+}

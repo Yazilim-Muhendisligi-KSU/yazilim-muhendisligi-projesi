@@ -1,5 +1,6 @@
 import redis
 import json
+import requests
 
 r = redis.Redis(host='localhost', port=6379, decode_responses=True)
  
@@ -29,3 +30,9 @@ def get_user_watch_list():
 mapping={"price": 5, "volume": 500}
 
 """
+
+
+def get_all_stocks():
+    stock_data = []
+    
+    return
