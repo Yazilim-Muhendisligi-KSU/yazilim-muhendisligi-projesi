@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-*3#0av^l9q^*a(c5z70wcg=7(qj+le#x4h)cgk=bnf46i&cd0m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition
@@ -36,8 +39,7 @@ INSTALLED_APPS = [
     'dashboard',
     'accounts',
     'stocks',
-    'static',
-    'frontend',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'stock_exchange.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'frontend/build')],
+        'DIRS': [ BASE_DIR / "templates" ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,13 +128,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS=[
-
-    os.path.join(BASE_DIR,'frontend/build/static')
-]
-
 # collectstatic komutunun statik dosyaları toplayacağı dizin
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # will come in handy in a prod environment
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 

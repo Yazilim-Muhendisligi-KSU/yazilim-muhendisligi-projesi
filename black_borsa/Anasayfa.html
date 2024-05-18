@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Borsa</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" type="image/x-icon" href="pic/logo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="navbar">
+        <a href="#"><img src="pic/logo2.png" alt="Borsa Takibi Logo" class="logo"></a>
+        <div class="nav-links">
+            <a href="./Anasayfa.html">Ana Sayfa</a>
+        
+            <a href="./hisseler.html">Hisseler</a>
+            <a href="./analizlerim.html">Analizler</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+           
+        </div>
+        <div class="nav-buttons">
+            <a href="./Login.html" class="btn">Login</a>
+            <a href="./Signin.html" class="btn">Sign In</a>
+        </div>
+    </div>
+    
+    <section id="anasayfa">
+        <h2>BIST 50 Endeksi</h2>
+        <!-- Arama Çubuğu -->
+        <div class="search-container">
+            <form action="#" method="GET">
+                <input type="text" id="search-bar" name="arama" placeholder="Hisse ara...">
+                <button type="submit">Ara</button>
+            </form>
+        </div>
+
+        <!-- BIST 100 Endeksi Grafik -->
+        <div id="bist-grafik">
+            <img src="pic/grafik2.jpg" alt="BIST 100 Grafik" class="grafik">
+        </div>
+
+        <!-- Yükselen ve Düşen Hisseler Tablosu -->
+        <div id="hisseler-tablosu">
+            <h3>Yükselen Hisseler</h3>
+            <table id="yükselen-hisseler-tablosu">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
+            <h3>Düşen Hisseler</h3>
+            <table id="düşen-hisseler-tablosu">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Table Data -->
+    <section id="fon">
+        <div class="table-container">
+            <table id="dinamik-tablo">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Prev. Close</th>
+                        <th>Open</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                        <th>Low</th>
+                        <th>High</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <section id="hakkimizda">
+        <footer>
+            <div class="footer-container">
+                <div class="about group">
+                    <h2>BLACK BORSA</h2>
+                    <p>Stock Market</p>
+                </div>
+                <div class="info group">
+                    <h3>More</h3>
+                    <ul>
+                        <li><a href="#canli-borsa">Canlı Borsa</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="follow group">
+                    <h3>Follow</h3>
+                    <ul>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href=""><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright group">
+                <p> 2024 by EKİP-8 ©Tüm Hakkları Saklıdır.</p>
+            </div>
+        </footer>
+    </section>
+    <script src="anasayfa.js"></script>
+    
+</body>
+</html>

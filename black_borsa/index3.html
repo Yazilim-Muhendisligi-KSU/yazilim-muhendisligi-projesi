@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Borsa</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" type="image/x-icon" href="pic/logo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="navbar">
+        <a href="#"><img src="pic/logo2.png" alt="Borsa Takibi Logo" class="logo"></a>
+        <div class="nav-links">
+            <a href="./Anasayfa.html">Ana Sayfa</a>
+           
+            <a href="./hisseler.html">Hisseler</a>
+            <a href="./analizlerim.html">Analizler</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+           
+        </div>
+        <div class="nav-buttons">
+            <a href="./Login.html" class="btn">Login</a>
+            <a href="./Signin.html" class="btn">Sign In</a>
+        </div>
+    </div>
+    <section id="anasayfa">
+        <h2>BIST 100 Endeksi</h2>
+        <!-- Arama Çubuğu -->
+        <div class="search-container">
+            <form action="#" method="GET">
+                <input type="text" id="search-bar" name="arama" placeholder="Hisse ara...">
+                <button type="submit">Ara</button>
+            </form>
+        </div>
+
+        <!-- BIST 100 Endeksi Grafik -->
+        <div id="bist-grafik">
+            <img src="pic/grafik2.jpg" alt="BIST 100 Grafik" class="grafik">
+        </div>
+
+        <!-- Yükselen ve Düşen Hisseler Tablosu -->
+        <div id="hisseler-tablosu">
+            <h3>Yükselen Hisseler</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XYZ</td>
+                        <td>50.00</td>
+                        <td>+2.5%</td>
+                    </tr>
+                    <tr>
+                        <td>ABC</td>
+                        <td>75.20</td>
+                        <td>+1.8%</td>
+                    </tr>
+                    <tr>
+                        <td>DEF</td>
+                        <td>42.80</td>
+                        <td>+1.2%</td>
+                    </tr>
+                    <tr>
+                        <td>GHI</td>
+                        <td>30.50</td>
+                        <td>+0.9%</td>
+                    </tr>
+                    <tr>
+                        <td>JKL</td>
+                        <td>18.60</td>
+                        <td>+0.5%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Düşen Hisseler</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MNO</td>
+                        <td>22.40</td>
+                        <td>-2.3%</td>
+                    </tr>
+                    <tr>
+                        <td>PQR</td>
+                        <td>37.80</td>
+                        <td>-1.5%</td>
+                    </tr>
+                    <tr>
+                        <td>STU</td>
+                        <td>45.60</td>
+                        <td>-1.0%</td>
+                    </tr>
+                    <tr>
+                        <td>VWX</td>
+                        <td>55.20</td>
+                        <td>-0.7%</td>
+                    </tr>
+                    <tr>
+                        <td>YZA</td>
+                        <td>62.80</td>
+                        <td>-0.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Table Data -->
+    <section id="fon">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Prev. Close</th>
+                        <th>Open</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                        <th>Low</th>
+                        <th>High</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MNDR</td>
+                        <td>6.95</td>
+                        <td>6.94</td>
+                        <td>6.95</td>
+                        <td>-1.00%</td>
+                        <td>6.9</td>
+                        <td>7.05</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="canli-borsa">
+        <div class="advantages">
+            <div>
+                <h3>DİLEDİĞİNİZ ŞİRKETE ORTAK OLUN</h3>
+                <p>Hisse senetlerine sahip olarak, halka açık dilediğiniz şirkete ortak olup, şirket sermayedarı olabilirsiniz.</p>
+            </div>
+            <div>
+                <h3>ORGANİZE PİYASADAN YARARLANIN</h3>
+                <p>Kural ve kanunlara göre düzenlenmiş hisse senetleri, bağlı oldukları kurumlar ile resmi işleyiş esasına dayanan organize bir pazardır.</p>
+            </div>
+            <div>
+                <h3>PAY HAKLARINDAN YARARLANIN</h3>
+                <p>Hisse senetlerine sahip olarak ortak olduğunuz şirkete dair kar payı, oy hakkı gibi haklardan faydalanabilirsiniz.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <section id="hakkimizda">
+        <footer>
+            <div class="footer-container">
+                <div class="about group">
+                    <h2>BLACK BORSA</h2>
+                    <p>Stock Market</p>
+                </div>
+                <div class="info group">
+                    <h3>More</h3>
+                    <ul>
+                        <li><a href="#canli-borsa">Canlı Borsa</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="follow group">
+                    <h3>Follow</h3>
+                    <ul>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href=""><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright group">
+                <p>© 2024 by EKİP-8. Tüm Hakkları Saklıdır.</p>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
