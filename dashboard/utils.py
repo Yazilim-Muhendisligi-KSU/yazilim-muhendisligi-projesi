@@ -32,7 +32,3 @@ mapping={"price": 5, "volume": 500}
 """
 
 
-def get_all_stocks():
-    stock_data = []
-    
-    return
