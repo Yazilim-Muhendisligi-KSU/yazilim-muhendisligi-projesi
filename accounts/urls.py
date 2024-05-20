@@ -9,6 +9,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
 
     # watchlist views
+    path('analysis/', views.analysis, name='analysis'),
     path('get_watchlist/', views.get_watchlist, name='get_watchlist'),
     path('add_to_watchlist/', views.add_to_watchlist, name='add_to_watchlist'),
     path('remove_from_watchlist/', views.remove_from_watchlist, name='remove_from_watchlist'),
