@@ -206,5 +206,5 @@ def remove_drawing(request):     # Çizim silme işlemleri burada gerçekleştir
 
     return JsonResponse({'message': 'Drawing removed'})
 ### DRAWING VIEWS END ###
-
+ 
 
