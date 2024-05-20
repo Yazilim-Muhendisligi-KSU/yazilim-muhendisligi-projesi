@@ -1,1 +1,72 @@
 {% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>BIST 50 Endeksi</h2>
+        <!-- Arama Çubuğu -->
+        <div class="search-container">
+            <form action="#" method="GET">
+                <input type="text" id="search-bar" name="arama" placeholder="Hisse ara...">
+                <button type="submit">Ara</button>
+            </form>
+        </div>
+
+        <!-- BIST 100 Endeksi Grafik -->
+        <div id="bist-grafik">
+            <img src="pic/grafik2.jpg" alt="BIST 100 Grafik" class="grafik">
+        </div>
+
+        <!-- Yükselen ve Düşen Hisseler Tablosu -->
+        <div id="hisseler-tablosu">
+            <h3>Yükselen Hisseler</h3>
+            <table id="yükselen-hisseler-tablosu">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
+            <h3>Düşen Hisseler</h3>
+            <table id="düşen-hisseler-tablosu">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>% Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table Data -->
+        <section id="fon">
+            <div class="table-container">
+                <table id="dinamik-tablo">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Prev. Close</th>
+                            <th>Open</th>
+                            <th>Last Price</th>
+                            <th>% Change</th>
+                            <th>Low</th>
+                            <th>High</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JavaScript ile dinamik olarak doldurulacak -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+{% endblock content %}

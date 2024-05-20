@@ -43,6 +43,30 @@ def logout_view(request):
 ### AUTH VIEWS END ###
 
 
+### ANALYZE VIEWS START ###
+def analysis(request):
+    context = {}
+    user_watchlist = WatchedStock.objects.filter(user=request.user)
+    user_analysis = Analysis.objects.filter(user=request.user)
+    
+    context["analysis"] = [
+        {
+            "stock_symbol": a.stock_symbol,
+            "data": a.data,
+        }
+    for a in user_analysis]
+
+    context["watchlist"] = [
+        {
+            "stock_symbol": wl.stock_symbol,
+        }
+    for wl in user_watchlist]
+
+    return render(request, "analysis.html", context)
+
+### ANALYZE VIEWS END ###
+
+
 ### WATCHLIST VIEWS START ###
 def get_watchlist(request): # İzleme listesine çağırma işlemleri burada gerçekleştirilir
     

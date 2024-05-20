@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for stock in watchlist %}
+    {{ stock }}
+{% endfor %}
+{% for analiz in analysis %}
+    {{ analiz }}
+    <img src="/{{ analiz.data }}"></img>
+{% endfor %}
+
+{% endblock content %}
+

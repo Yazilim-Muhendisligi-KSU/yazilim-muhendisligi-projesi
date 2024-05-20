@@ -126,12 +126,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # collectstatic komutunun statik dosyaları toplayacağı dizin
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # will come in handy in a prod environment
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_URL = '/media/'
+
+# collectMEDIA komutunun statik dosyaları toplayacağı dizin
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # will come in handy in a prod environment
+
 
 
 

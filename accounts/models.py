@@ -1,3 +1,4 @@
+from typing import Any
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -45,6 +46,17 @@ class Notification(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.text[:15]}"
+
+
+class Stock(models.Model):
+    stock_symbol = models.CharField(max_length=255)
+    
+    data = models.JSONField()
+
+    def __call__(self, *args: Any, **kwds: Any) -> Any:
+        
+        return super().__call__(*args, **kwds)
+    
 
 
 """
