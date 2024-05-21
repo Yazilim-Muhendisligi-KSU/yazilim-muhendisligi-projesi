@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 from .forms import RegisterForm, LoginForm
 from .models import User, Analysis, WatchedStock, Notification
@@ -44,6 +45,7 @@ def logout_view(request):
 
 
 ### ANALYZE VIEWS START ###
+@login_required
 def analysis(request):
     context = {}
     user_watchlist = WatchedStock.objects.filter(user=request.user)

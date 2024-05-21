@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kara Borsa - {% block title %}BASE TITLE{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-    <link rel="icon" type="image/x-icon" href="pic/logo2.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo2.png' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <!-- Top Navigation -->
     <div class="navbar">
-        <a href="#"><img src="pic/logo2.png" alt="Borsa Takibi Logo" class="logo"></a>
+        <a href="#"><img src="{% static 'img/logo2.png' %}" alt="Borsa Takibi Logo" class="logo"></a>
         <div class="nav-links">
             <a href="{% url 'dashboard:home' %}">Ana Sayfa</a>
         
@@ -72,7 +73,7 @@
             </div>
         </footer>
     </section>
-    <script src="anasayfa.js"></script>
+    <script src="{% static 'js/anasayfa.js' %}"></script>
     
 </body>
 </html>

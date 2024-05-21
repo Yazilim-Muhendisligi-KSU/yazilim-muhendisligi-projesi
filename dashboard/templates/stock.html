@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<canvas id="grafik" width="700" height="350" style="display: block; margin: auto;"></canvas>
+
+<script>
+    const ctx = document.getElementById('grafik');
+    const stockData = JSON.parse('{{ stock_data|safe }}');
+    console.log(stockData);
+    const labels = [];
+    const data = [];
+
+    stockData.forEach(sd => {
+        console.log(sd);
+        labels.push(sd.date);
+        data.push(sd.close);
+    });
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '{{ SYMBOL|safe }}',
+                backgroundColor: "#85BB65",
+                borderColor: "#000000",
+                borderWidth: 2,
+                data: data,
+            }]
+        },
+        options: {
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+</script>
+
+{% endblock content %}
+

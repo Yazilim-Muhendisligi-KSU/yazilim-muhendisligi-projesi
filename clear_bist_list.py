@@ -1,3 +1,4 @@
+#from yahoo_finance import Share
 import yfinance as yf
 
 bist_list = """
@@ -730,16 +731,19 @@ try:
         print()
         print()
         print(stock)
-        ticker.info
+        i = ticker.info
+        try:
+            if i["industry"] is None:
+                continue
+        except Exception as e:
+            continue
         clean_list.append(stock)
         print("added to the list")
         print()
         print()
+        print(clean_list)
 
 except KeyboardInterrupt:
-    print()
-    print()
-    print()
     print()
     print(clean_list)
     exit()

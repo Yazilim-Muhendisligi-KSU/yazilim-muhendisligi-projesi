@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -13,22 +13,144 @@
         </div>
 
         <!-- BIST 100 Endeksi Grafik -->
-        <div id="bist-grafik">
-            <img src="pic/grafik2.jpg" alt="BIST 100 Grafik" class="grafik">
-        </div>
+        <canvas id="bist-grafik" width="700" height="350" style="display: block; margin: auto;"></canvas>
+
+        <script>
+            const ctx = document.getElementById('bist-grafik');
+            const graphData = JSON.parse('{{ graph_data|safe }}');
+            const _labels = [];
+            const _data = [];
+            graphData.forEach(sd => {
+                console.log(sd);
+                _labels.push(sd.date);
+                _data.push(sd.close);
+            });
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: _labels,
+                    datasets: [{
+                        label: 'XU100',
+                        backgroundColor: "#85BB65",
+                        borderColor: "#000000",
+                        borderWidth: 2,
+                        data: _data,
+                    }]
+                },
+                options: {
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 10,
+                            bottom: 10
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            document.getElementById('search-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Sayfanın yenilenmesini önler
+
+                const input = document.getElementById('search-bar').value.toLowerCase(); // Arama kutusundan değeri alır
+                const rows = document.querySelectorAll('#dinamik-tablo tbody tr'); // Tablodaki tüm satırları seçer
+
+                const searchList = document.getElementById('search-list'); // Arama sonuçlarını gösterecek liste
+
+                // Temizleme önceki arama sonuçlarını temizler
+                searchList.innerHTML = '';
+
+                rows.forEach(row => {
+                    const symbol = row.cells[0].textContent.toLowerCase(); // Her satırın ilk sütunundaki sembolü alır
+                    if (symbol.includes(input)) { // Girilen değerle sembol karşılaştırması yapar
+                        row.style.display = ''; // Eşleşen satırı görünür yapar
+
+                        // Eşleşen hisse sembolünü arama sonuçları listesine ekler
+                        const li = document.createElement('li');
+                        li.textContent = symbol;
+                        searchList.appendChild(li);
+                    } else {
+                        row.style.display = 'none'; // Eşleşmeyen satırı gizler
+                    }
+                });
+            });
+        </script>
+
 
         <!-- Yükselen ve Düşen Hisseler Tablosu -->
         <div id="hisseler-tablosu">
+            <h3>Popüler Hisseler</h3>
+            <table id="yükselen-hisseler-tablosu">
+                <thead>
+                    <tr>
+                        <th>SEMBOL</th>
+                        <th>SON</th>
+                        <th>ALIŞ</th>
+                        <th>SATIŞ</th>
+                        <th>%G</th>
+                    </tr>
+                </thead>
+                <tbody id="popular-stocks">
+                    {% for popular_stock in popular_stocks %}
+                    <tr onclick="go_to_stock_page('{{ popular_stock.SYMBOL|escapejs }}')">
+                        <td>
+                            {{ popular_stock.SYMBOL }}
+                        </td>
+                        <td>
+                            {{ popular_stock.CLOSE }}
+                        </td>
+                        <td>
+                            {{ popular_stock.BUY }}
+                        </td>
+                        <td>
+                            {{ popular_stock.SELL }}
+                        </td>
+                        <td>
+                            {{ popular_stock.CHANGE|floatformat:1 }}
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    <!-- JavaScript ile dinamik olarak doldurulacak -->
+                </tbody>
+            </table>
             <h3>Yükselen Hisseler</h3>
             <table id="yükselen-hisseler-tablosu">
                 <thead>
                     <tr>
-                        <th>Symbol</th>
-                        <th>Last Price</th>
-                        <th>% Change</th>
+                        <th>SEMBOL</th>
+                        <th>SON</th>
+                        <th>ALIŞ</th>
+                        <th>SATIŞ</th>
+                        <th>%G</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="gaining-stocks">
+                    {% for gaining_stock in gaining_stocks %}
+                    <tr onclick="go_to_stock_page('{{ gaining_stock.SYMBOL|escapejs }}')">
+                        <td>
+                            {{ gaining_stock.SYMBOL }}
+                        </td>
+                        <td>
+                            {{ gaining_stock.CLOSE }}
+                        </td>
+                        <td>
+                            {{ gaining_stock.BUY }}
+                        </td>
+                        <td>
+                            {{ gaining_stock.SELL }}
+                        </td>
+                        <td>
+                            {{ gaining_stock.CHANGE|floatformat:1 }}
+                        </td>
+                    </tr>
+
+                    {% endfor %}
                     <!-- JavaScript ile dinamik olarak doldurulacak -->
                 </tbody>
             </table>
@@ -36,37 +158,54 @@
             <table id="düşen-hisseler-tablosu">
                 <thead>
                     <tr>
-                        <th>Symbol</th>
-                        <th>Last Price</th>
-                        <th>% Change</th>
+                        <th>SEMBOL</th>
+                        <th>SON</th>
+                        <th>ALIŞ</th>
+                        <th>SATIŞ</th>
+                        <th>%G</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="losing-stocks">
+                    {% for losing_stock in losing_stocks %}
+                    <tr onclick="go_to_stock_page('{{ losing_stock.SYMBOL|escapejs }}')">
+                        <td>
+                            {{ losing_stock.SYMBOL }}
+                        </td>
+                        <td>
+                            {{ losing_stock.CLOSE }}
+                        </td>
+                        <td>
+                            {{ losing_stock.BUY }}
+                        </td>
+                        <td>
+                            {{ losing_stock.SELL }}
+                        </td>
+                        <td>
+                            {{ losing_stock.CHANGE|floatformat:1 }}
+                        </td>
+                    </tr>
+
+                    {% endfor %}
                     <!-- JavaScript ile dinamik olarak doldurulacak -->
                 </tbody>
             </table>
         </div>
 
-        <!-- Table Data -->
-        <section id="fon">
-            <div class="table-container">
-                <table id="dinamik-tablo">
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Prev. Close</th>
-                            <th>Open</th>
-                            <th>Last Price</th>
-                            <th>% Change</th>
-                            <th>Low</th>
-                            <th>High</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- JavaScript ile dinamik olarak doldurulacak -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
+
+<script>
+    const popularStocksWrapper = document.getElementById("popular-stocks");
+    const popularStocks = JSON.parse("{{ popular_stocks }}");
+    console.log(popularStocks);
+    popularStocks.forEach(stock => {
+        const td = document.createElement("td");
+        td.innerHTML = stock.SYMBOL;
+        popularStocksWrapper.append(td);
+    });
+</script>
+<script>
+    function go_to_stock_page(stock) {
+        window.location = "{% url 'dashboard:get_stock_data' %}?symbol=" + stock
+    }
+</script>
 
 {% endblock content %}
